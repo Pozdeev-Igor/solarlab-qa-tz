@@ -12,11 +12,11 @@ public class AfterStepClass {
         WebDriverRunner.getWebDriver().quit();
     }
 
-    @AfterStep
-    public void screenCapture() {
-        Selenide.screenshot(
-                System.currentTimeMillis() + "__step");
-    }
+//    @AfterStep
+//    public void screenCapture() {
+//        Selenide.screenshot(
+//                System.currentTimeMillis() + "__step");
+//    }
 }
 
 

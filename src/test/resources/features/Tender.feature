@@ -12,5 +12,5 @@ Feature: Filter search
       And select date TODAY
       And click on "Найти" button
 
-#      Then
+      Then iterate all elements
 

@@ -3,10 +3,7 @@ package steps;
 import com.codeborne.selenide.SelenideElement;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import pages.MainPage;
-import pages.ModalWindow;
-import pages.SearchBar;
-import pages.SearchWindow;
+import pages.*;
 
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -15,6 +12,7 @@ public class TenderSteps {
     SearchBar bar = new SearchBar();
     SearchWindow window = new SearchWindow();
     ModalWindow modalWindow = new ModalWindow();
+    SearchResult result = new SearchResult();
 
 
     @Then("in footer click on {string} link")
@@ -34,10 +32,7 @@ public class TenderSteps {
 
     @Then("in opened modal click on {string} checkbox")
     public void inOpenedModalClickOnCheckbox(String arg0) {
-
         modalWindow.clckCheckbox(arg0);
-
-
     }
 
     @And("click on {string} checkbox")
@@ -59,5 +54,10 @@ public class TenderSteps {
     @And("click on {string} button")
     public void clickOnButton(String arg0) {
         modalWindow.clickSubmitButton(arg0);
+    }
+
+    @Then("iterate all elements")
+    public void iterateAllElements() {
+        result.iterateElements();
     }
 }
