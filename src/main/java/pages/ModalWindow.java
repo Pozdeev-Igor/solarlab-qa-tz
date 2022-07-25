@@ -13,10 +13,12 @@ public class ModalWindow {
     private final SelenideElement regionCollapse = $x("//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[7]/div[1]/div");
     private final SelenideElement altayLabel = $x("//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[7]/div[5]/div/ul/li[1]/label");
     private final SelenideElement dateFilterCollapse = $x("//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div/div");
-    private final SelenideElement dateInputFrom = $x("//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div[2]/div/div/div[1]/div[2]/div[1]/div/div/input");
-    private final SelenideElement dateInputTo = $x("//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div[2]/div/div/div[1]/div[2]/div[3]/div/div/input");
-    private final SelenideElement currentDay1 = $x("//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div[2]/div/div/div[1]/div[2]/div[1]/div/div[2]/div/div/div[2]/div[2]/div[5]/div[1]");
-    private final SelenideElement currentDay2 = $x("//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div[2]/div/div/div[1]/div[2]/div[3]/div/div[2]/div/div/div[2]/div[2]/div[5]/div[1]");
+    private final SelenideElement dateInputFrom = $x("//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/input");
+    private final SelenideElement dateInputTo = $x("//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/input");
+    private final SelenideElement currentDay1 = $x("//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div/div[2]/div[2]/div[5]/div[1]");
+    private final SelenideElement currentDay2 = $x("//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div[2]/div/div/div[2]/div[2]/div[3]/div/div[2]/div/div/div[2]/div[2]/div[5]/div[1]");
+    private final SelenideElement submitButton = $x("//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[6]/div/div/button");
+
 
     public void clckCheckbox(String check) {
         chckBoxLabel.click();
@@ -40,5 +42,10 @@ public class ModalWindow {
 
         dateInputTo.click();
         currentDay2.click();
+    }
+
+    public void clickSubmitButton(String str) {
+
+        submitButton.click();
     }
 }

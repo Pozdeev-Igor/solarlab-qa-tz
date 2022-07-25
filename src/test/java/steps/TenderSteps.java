@@ -55,4 +55,9 @@ public class TenderSteps {
     public void selectDateTODAY() {
         modalWindow.selectDate();
     }
+
+    @And("click on {string} button")
+    public void clickOnButton(String arg0) {
+        modalWindow.clickSubmitButton(arg0);
+    }
 }

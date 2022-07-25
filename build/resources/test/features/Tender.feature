@@ -10,4 +10,7 @@ Feature: Filter search
       And click on "Исключить совместные покупки" checkbox
       And click on "Алтайский край" region checkbox
       And select date TODAY
+      And click on "Найти" button
+
+#      Then
 
