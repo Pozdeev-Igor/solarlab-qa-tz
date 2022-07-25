@@ -1,5 +1,6 @@
 package steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import pages.MainPage;
 import pages.ModalWindow;
@@ -32,5 +33,15 @@ public class TenderSteps {
         modalWindow.clckCheckbox(arg0);
 
 
+    }
+
+    @And("click on {string} checkbox")
+    public void clickOnCheckbox(String arg0) {
+        modalWindow.jointPurchasesClick(arg0);
+    }
+
+    @And("click on {string} region checkbox")
+    public void clickOnRegionCheckbox(String arg0) {
+        modalWindow.clickOnRegionCollapse(arg0);
     }
 }

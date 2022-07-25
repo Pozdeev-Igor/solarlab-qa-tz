@@ -7,4 +7,6 @@ Feature: Filter search
       Then in search bar click on "Расширенный поиск" link
       Then in search window click on "Настроить" button
       Then in opened modal click on "615-ПП РФ" checkbox
+      And click on "Исключить совместные покупки" checkbox
+      And click on "Алтайский край" region checkbox
 
