@@ -9,4 +9,5 @@ Feature: Filter search
       Then in opened modal click on "615-ПП РФ" checkbox
       And click on "Исключить совместные покупки" checkbox
       And click on "Алтайский край" region checkbox
+      And select date TODAY
 
