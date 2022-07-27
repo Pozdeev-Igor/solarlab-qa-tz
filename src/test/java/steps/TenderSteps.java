@@ -1,13 +1,10 @@
 package steps;
 
-import com.codeborne.selenide.SelenideElement;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pages.*;
-
-import static com.codeborne.selenide.Selenide.$x;
 
 public class TenderSteps {
 
@@ -48,7 +45,6 @@ public class TenderSteps {
     public void clickOnRegionCheckbox(String arg0) {
         modalWindow.clickOnRegionCollapse(arg0);
     }
-
 
     @And("select date TODAY")
     public void selectDateTODAY() {
