@@ -12,8 +12,10 @@ import static com.codeborne.selenide.Selenide.*;
 public class SearchResult {
 
     private final SelenideElement loadMoreButton = $x("//*[@id=\"load-more\"]");
+    private final SelenideElement content = $("#content");
 
     public void iterateElements() {
+
         loadMoreButton.click();
         List<SelenideElement> elements = $$(".cards .cards:only-of-type");
 //         int numberOfElements = elements.size();
@@ -21,7 +23,8 @@ public class SearchResult {
         for (WebElement element : elements) {
 
             System.out.println(element.getText());
-
         }
+
+
     }
 }

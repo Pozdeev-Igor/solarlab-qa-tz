@@ -18,39 +18,39 @@ public class ModalWindow {
     
 
     private final SelenideElement
-            chckBoxLabel = $(
-                    "div.modal-settings-filter__main > div:nth-child(2) > div:nth-child(3) > div > div > div:nth-child(3) label");
+            chckBoxLabel = $("div.modal-settings-filter__main > " +
+                                        "div:nth-child(2) > div:nth-child(3) > " +
+                                            "div > div > div:nth-child(3) label");
     private final SelenideElement
-            excludeJointPurchasesLabel = $(
-                    "div.modal-settings-filter__main > div:nth-child(1) > div:nth-child(3) > div > div > div:nth-child(3) label");
+            excludeJointPurchasesLabel = $("div.modal-settings-filter__main > " +
+                                                        "div:nth-child(1) > div:nth-child(3) > " +
+                                                            "div > div > div:nth-child(3) label");
     private final SelenideElement
-            regionCollapse = $x(
-                    "//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[7]/div[1]/div");
+            regionCollapse = $("div.modal-settings-filter__main > " +
+                                            "div:nth-child(7) > div > div");
     private final SelenideElement
-            altayLabel = $x(
-                    "//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[7]/div[5]/div/ul/li[1]/label");
+            altayLabel = $("div.modal-settings-filter__main > " +
+                                        "div:nth-child(7) > div:nth-child(5) > " +
+                                            "div > ul > li:nth-child(1) > label");
     private final SelenideElement
-            dateFilterCollapse = $x(
-                    "//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div/div");
+            dateFilterCollapse = $("div.modal-settings-filter__main > " +
+                                                "div:nth-child(12) > div > div");
     private final SelenideElement
-            dateInputFrom = $x(
-                    "//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div[2]/div/div/div[2]" +
-                                    "/div[2]/div[1]/div/div/input");
+            dateInputFrom = $("div.modal-settings-row > div > div > div:nth-child(1) > " +
+                                            "div.form-group.form-group--nowrap > div:nth-child(1)");
     private final SelenideElement
-            dateInputTo = $x(
-                    "//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div[2]/div/div/div[2]" +
-                                    "/div[2]/div[3]/div/div/input");
+            dateInputTo = $("div.modal-settings-row > div > div > div:nth-child(1) > " +
+                                            "div.form-group.form-group--nowrap > div:nth-child(3)");
     private final SelenideElement
-            currentDay1 = $x(
-                    "//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div[2]/div/div/div[2]" +
-                                    "/div[2]/div[1]/div/div[2]/div/div/div[2]/div[2]/div[5]/div[1]");
+            currentDay1 = $(
+                    "div[tabindex=\"0\"]");
     private final SelenideElement
             currentDay2 = $x(
                     "//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div[2]/div/div/div[2]" +
                                     "/div[2]/div[3]/div/div[2]/div/div/div[2]/div[2]/div[5]/div[1]");
     private final SelenideElement
-            submitButton = $x(
-                    "//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[6]/div/div/button");
+            submitButton = $(
+                    ".bottomCenterSearch > div > div > button");
 
     public void clckCheckbox(String check) {
 
@@ -75,7 +75,7 @@ public class ModalWindow {
         currentDay1.click();
 
         dateInputTo.click();
-        currentDay2.click();
+        currentDay1.click();
     }
 
     public void clickSubmitButton(String str) {
