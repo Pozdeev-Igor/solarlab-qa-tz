@@ -19,6 +19,13 @@ public class ModalWindow {
             altayLabel = $("div.modal-settings-filter__main > " +
                                         "div:nth-child(7) > div:nth-child(5) > " +
                                             "div > ul > li:nth-child(1) > label");
+
+    //.regions-list label:first-child
+
+
+//
+
+
     private final SelenideElement
             dateFilterCollapse = $("div.modal-settings-filter__main > " +
                                                 "div:nth-child(12) > div > div");
