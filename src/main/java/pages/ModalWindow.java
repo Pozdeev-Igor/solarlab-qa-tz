@@ -1,20 +1,28 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class ModalWindow {
+    
 
     private final SelenideElement
-            chckBox615 = $x(
-            "//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[2]/div[3]/div/div/div[3]/input");
+            chckBoxLabel = $(
+                    "div.modal-settings-filter__main > div:nth-child(2) > div:nth-child(3) > div > div > div:nth-child(3) label");
     private final SelenideElement
-            chckBoxLabel = $x(
-                    "//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[2]/div[3]/div/div/div[3]/label");
-    private final SelenideElement
-            excludeJointPurchasesLabel = $x(
-                    "//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[1]/div[3]/div/div/div[3]/label");
+            excludeJointPurchasesLabel = $(
+                    "div.modal-settings-filter__main > div:nth-child(1) > div:nth-child(3) > div > div > div:nth-child(3) label");
     private final SelenideElement
             regionCollapse = $x(
                     "//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[7]/div[1]/div");
@@ -44,8 +52,8 @@ public class ModalWindow {
             submitButton = $x(
                     "//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[6]/div/div/button");
 
-
     public void clckCheckbox(String check) {
+
         chckBoxLabel.click();
     }
 
@@ -53,6 +61,7 @@ public class ModalWindow {
 //        System.out.println(chckBox615.isDisplayed());
 //    }
     public void jointPurchasesClick(String check) {
+
         excludeJointPurchasesLabel.click();
     }
     public void clickOnRegionCollapse(String str) {

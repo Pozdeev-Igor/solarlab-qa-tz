@@ -3,11 +3,15 @@ package steps;
 import com.codeborne.selenide.SelenideElement;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import pages.*;
 
 import static com.codeborne.selenide.Selenide.$x;
 
 public class TenderSteps {
+
+    static Logger log = LogManager.getLogger();
     MainPage page = new MainPage();
     SearchBar bar = new SearchBar();
     SearchWindow window = new SearchWindow();
