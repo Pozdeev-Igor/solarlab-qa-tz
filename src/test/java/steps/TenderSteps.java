@@ -13,6 +13,8 @@ public class TenderSteps {
     SearchBar bar = new SearchBar();
     SearchWindow window = new SearchWindow();
     ModalWindow modalWindow = new ModalWindow();
+
+
     SearchResult result = new SearchResult();
 
 

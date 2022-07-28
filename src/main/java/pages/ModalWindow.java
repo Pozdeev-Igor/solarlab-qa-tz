@@ -19,13 +19,10 @@ public class ModalWindow {
             altayLabel = $("div.modal-settings-filter__main > " +
                                         "div:nth-child(7) > div:nth-child(5) > " +
                                             "div > ul > li:nth-child(1) > label");
-
-    //.regions-list label:first-child
-
-
-//
-
-
+    private final SelenideElement
+            activeLabel = $("div.modal-settings-filter__main > " +
+                                        "div:nth-child(3) > div.grid > div > " +
+                                            "div:nth-child(1) > label");
     private final SelenideElement
             dateFilterCollapse = $("div.modal-settings-filter__main > " +
                                                 "div:nth-child(12) > div > div");
@@ -39,16 +36,24 @@ public class ModalWindow {
             currentDay1 = $("div[tabindex=\"0\"]");
     private final SelenideElement
             submitButton = $(".bottomCenterSearch > div > div > button");
+    private final SelenideElement activeCheckbox = $("div.modal-settings-filter__main > " +
+                                                                "div:nth-child(3) > div.grid > div > " +
+                                                                    "div:nth-child(1) > input[type=checkbox]");
 
     public void clckCheckbox(String check) {
+
         chckBoxLabel.click();
+        if (activeCheckbox.isSelected()) {
+            activeLabel.click();
+        }
+
     }
     public void jointPurchasesClick(String check) {
         excludeJointPurchasesLabel.click();
     }
     public void clickOnRegionCollapse(String str) {
         regionCollapse.click();
-        altayLabel.click();
+            altayLabel.click();
     }
 
     public void selectDate() {
