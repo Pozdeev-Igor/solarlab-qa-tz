@@ -59,6 +59,7 @@ public class ModalWindow {
     public void selectDate() {
         dateFilterCollapse.click();
             dateInputFrom.click();
+//               $x("//*[@id=\"ftfbn-portal\"]/div[2]/div/div/div/div[1]/div[5]/div[12]/div[2]/div/div/div[1]/div[2]/div[1]/div/div[2]/div/div/div[2]/div[2]/div[5]/div[5]").click();
                 currentDay1.click();
                     dateInputTo.click();
                         currentDay1.click();

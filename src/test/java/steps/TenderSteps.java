@@ -6,6 +6,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pages.*;
 
+import java.io.IOException;
+
 public class TenderSteps {
 
     static Logger log = LogManager.getLogger();
@@ -60,6 +62,10 @@ public class TenderSteps {
 
     @Then("iterate all elements")
     public void iterateAllElements() {
-        result.iterateElements();
+        try {
+            result.iterateElements();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
