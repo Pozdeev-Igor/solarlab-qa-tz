@@ -1,8 +1,5 @@
 package helpful;
 
-import java.text.DecimalFormat;
-import java.util.Arrays;
-
 public class ParseClass {
 
     public Long parserToLong (String str) {
@@ -39,8 +36,6 @@ public class ParseClass {
                             .insert(tempString.length(), " " + "0xE2")
                             .insert(tempString.length()-2, ",")
                             .insert(tempString.length()-5, " ")
-                            .insert(tempString.length()-8, " ")
-                            .insert(tempString.length()-11, " ")
                             .toString();
         }
                 return tempString;
