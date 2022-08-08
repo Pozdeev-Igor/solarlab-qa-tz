@@ -17,7 +17,7 @@ public class ParseClass {
 
         if (tempString.length() > 11) {
             tempString = new StringBuffer(tempString.trim())
-                    .insert(tempString.length(), " " + "0xE2")
+                    .insert(tempString.length(), " " + "RUB")
                     .insert(tempString.length()-2, ",")
                     .insert(tempString.length()-5, " ")
                     .insert(tempString.length()-8, " ")
@@ -26,14 +26,14 @@ public class ParseClass {
         }
             else if (8 <= tempString.length()) {
                 tempString = new StringBuffer(tempString.trim())
-                    .insert(tempString.length(), " " + "0xE2")
+                    .insert(tempString.length(), " " + "RUB")
                     .insert(tempString.length()-2, ",")
                     .insert(tempString.length()-5, " ")
                     .insert(tempString.length()-8, " ").toString();
         }
                 else if (5 >= tempString.length()) {
                     tempString = new StringBuffer(tempString.trim())
-                            .insert(tempString.length(), " " + "0xE2")
+                            .insert(tempString.length(), " " + "RUB")
                             .insert(tempString.length()-2, ",")
                             .insert(tempString.length()-5, " ")
                             .toString();
