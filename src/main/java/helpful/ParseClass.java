@@ -40,4 +40,8 @@ public class ParseClass {
         }
                 return tempString;
     }
+
+    public String countFormatter (String count) {
+        return count.replaceAll("\\s", "");
+    }
 }

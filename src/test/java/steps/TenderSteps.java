@@ -62,10 +62,13 @@ public class TenderSteps {
 
     @Then("iterate all elements")
     public void iterateAllElements() {
+
         try {
             result.iterateElements();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+
     }
 }

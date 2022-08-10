@@ -1,6 +1,8 @@
 package pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 import helpful.ParseClass;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,38 +25,42 @@ ParseClass parseClass = new ParseClass();
 
     private static final Logger logger = LogManager.getLogger();
     private final SelenideElement loadMoreButton = $("#load-more");
-List<SelenideElement> elements = $$("#content > div[itemtype = \"http://schema.org/Product\"]");
+ElementsCollection elements = $$("[itemprop=\"price\"]");
+//    ElementsCollection elements = $$("#content > div[itemtype = \"http://schema.org/Product\"]");
+
+
+ElementsCollection navigateButtons = $$("#pager > li");
 
     public void iterateElements() throws IOException {
 
             FileWriter writer = new FileWriter("D:\\SOLARLAB\\output.txt");
-
-
-        WebDriverWait driverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(20, 1));
-            driverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#Notifications span")));
-            driverWait.until(ExpectedConditions.elementToBeClickable(loadMoreButton.scrollIntoView(
-                    "{behavior: \"instant\", block: \"center\", inline: \"center\"}")));
-            if (!elements.isEmpty()){
-                           loadMoreButton.click();
-            }
-
                 long price;
                 long summ = 0;
 
-        // ожидаю получения строки с количеством "извещений" и записываю её в count
-        String count = driverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#Notifications > b > span"))).getText();
+        WebDriverWait driverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(60, 1));
+        driverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#content > div")));
 
-        // ожидаю, пока количество "извещений" станет доступным для итерации
-        driverWait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("#content > div[itemtype = \"http://schema.org/Product\"]"), Integer.parseInt(count)));
-            if (!elements.isEmpty()){
-                for (WebElement element : elements) {
-                    writer.write("STARTING PRICE: " + element.findElement(By.cssSelector("[itemprop=\"price\"]")).getText() + "\n");
-                    price = parseClass.parserToLong(element.findElement(By.cssSelector("[itemprop=\"price\"]")).getText());
-                    summ = price + summ;
+        SelenideElement el;
+        for (int i = 1; i < navigateButtons.size(); i++){
+            System.out.println(navigateButtons.get(i).getText());
+                for (int index = 0; index < elements.size(); index++) {
+                        el = elements.get(index);
+                        sleep(300);
+                        writer.write("Page: " + navigateButtons.get(i).getText() + " STARTING PRICE: " + el.getText() + "\n");
+                        summ = parseClass.parserToLong(el.getText()) + summ;
+                    }
+
+            int indexx = i+1;
+//            SelenideElement buttonLink = $("#pager > li:nth-child(" + indexx +")");
+            if (indexx == navigateButtons.size() -1) {
+                break;
             }
-                writer.close();
-                String s = parseClass.formatter(summ);
-                    logger.info("SUMMARY: " + s);
+            driverWait.until(ExpectedConditions.elementToBeClickable((navigateButtons.get(indexx).scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}")))).click();
+            sleep(200);
         }
+
+        writer.close();
+        String s = parseClass.formatter(summ);
+        logger.info("SUMMARY: " + s);
     }
 }
